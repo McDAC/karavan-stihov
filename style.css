@@ -339,7 +339,7 @@ figcaption {
   font-size: 0.9rem;
   color: #666;
   margin-top: 0;
-  text-align: center;
+  text-align: left;
 }
 
 /* Пагинация */
