@@ -142,7 +142,7 @@ h1, h2, h3 {
   color: var(--primary);
 }
 
-h1 {
+main h1 {
   font-size: 42px;
 }
 
