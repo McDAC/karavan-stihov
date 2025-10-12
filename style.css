@@ -119,15 +119,6 @@ h1 {
   font-size: 42px;
 }
 
-h2 {
-  font-family: var(--font-heading);
-  font-weight: 500; /* Единое начертание для стабильности */
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  text-align: left;
-  color: var(--primary);
-}
-
 /* Стили для фотографии автора */
 figure {
   margin: 20px 0;
@@ -241,7 +232,7 @@ figcaption {
 }
 
 /* Заголовок в карточке */
-.poem-card h4 {
+.poem-card .poem-title {
   font-family: var(--font-heading);
   font-weight: 500;
   margin: 0 0 8px 0;
@@ -253,9 +244,12 @@ figcaption {
 .poem-title {
   font-family: var(--font-heading);
   font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.5px;
   margin-bottom: 8px;
-  font-size: 1.1rem;
+  text-align: left;
   line-height: 1.3;
+  color: var(--primary);
 }
 
 .poem-meta {
