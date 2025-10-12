@@ -333,6 +333,10 @@ figcaption {
     gap: 20px;
   }
 
+  h1 {
+    font-size: 28px;
+  }
+
   .poems-grid {
     grid-template-columns: 1fr;
   }
@@ -344,7 +348,7 @@ figcaption {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   body {
     padding: 10px;
   }
