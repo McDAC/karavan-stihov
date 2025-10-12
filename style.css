@@ -1,54 +1,78 @@
-/* ===== ШРИФТЫ ===== */
-@font-face {
-  font-family: 'Lora';
-  src: url('fonts/Lora-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-display: swap;
+/* Подключаем шрифты локально */
+    @font-face {
+      font-family: 'Lora';
+      src: url('fonts/Lora-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+      font-family: 'Lora';
+      src: url('fonts/Lora-Medium.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Lora';
+      src: url('fonts/Lora-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    @font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter18pt-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: url('fonts/Inter18pt-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
 
-/* ===== ПЕРЕМЕННЫЕ ===== */
+
+/* Глобальные переменные */
 :root {
   --primary: #5a3e2b;
   --secondary: #f9f5e9;
   --text: #333;
   --light: #fff;
+  --accent: #8b5a3c;
   --border: #e0d6c3;
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body: 'Inter', Arial, sans-serif;
 }
 
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Сброс стандартных отступов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
+
+/* Основные стили */
 body {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   line-height: 1.6;
   background: var(--secondary);
   color: var(--text);
-  max-width: 800px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 20px;
+  /* Оптимизация рендеринга текста */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ===== ЗАГОЛОВКИ ===== */
-h1, h2, h3 {
-  font-family: 'Lora', Georgia, serif;
-  font-weight: 500;
-  text-align: center;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-h1 { font-size: 42px; }
-h2 { font-size: 32px; }
-h3 { font-size: 24px; }
-
-/* ===== ШАПКА ===== */
+/* Шапка */
 header {
   background: var(--primary);
   padding: 10px;
@@ -68,39 +92,73 @@ nav a {
   color: var(--light);
   text-decoration: none;
   font-size: 1.1em;
+  transition: all 0.3s;
 }
 
-/* ===== КАРТОЧКИ СТИХОВ ===== */
-.poems-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 15px;
-  margin: 30px 0;
+nav a:hover {
+  opacity: 0.8;
 }
 
-.poem-card {
-  background: var(--light);
-  padding: 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+/* Контент */
+main {
+  padding: 30px 0;
 }
 
-.poem-title {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 1.2rem;
+/* Заголовки */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 500; /* Единое начертание для стабильности */
+  letter-spacing: 0.5px;
+  
+  margin-bottom: 1rem;
   color: var(--primary);
-  margin-bottom: 8px;
 }
 
-.poem-meta {
-  font-size: 0.9rem;
-  color: #666;
+h1 {
+  font-size: 42px;
+  text-align: center;
 }
 
-/* ===== СТРАНИЦА СТИХА ===== */
-.poem {
+/* ДОБАВИТЬ ЭТОТ БЛОК */
+h2, h3 {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  h2, h3 {
+    text-align: center;
+  }
+}
+
+/* Стили для фотографии автора */
+figure {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.author-photo {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3px;
+  margin: 20px auto;
+  border: 0px solid var(--primary);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+figcaption {
+  font-style: normal;
+  color: var(--primary);
+  margin-top: 10px;
+  font-family: 'Inter', Arial, sans-serif;
+  display: block;
+  text-align: center;
+}
+
+/* Блоки контента (биография, контакты) */
+.content-block {
   background: var(--light);
   padding: 25px;
   border-radius: 3px;
@@ -108,55 +166,216 @@ nav a {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.poem-text {
-  white-space: pre-wrap;
-  line-height: 1.8;
-  font-size: 1.1em;
+.content-block a {
+  color: var(--primary);
+  text-decoration: underline;
 }
 
+.content-block a:hover {
+  opacity: 0.7;
+}
+
+/* Стихи */
+.poem {
+  background: var(--light);
+  padding: 25px;
+  border-radius: 3px;
+  margin: 30px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poem-date {
+  color: #666;
+  text-align: left;
+  font-style: italic;
+  margin: 15px 0;
+
+  display: flex;
+  align-content: space-between;
+}
+
+.poem-text {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.8;
+  width: 100%;
+}
+
+/* Двухколоночные стихи */
 .poem-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+  align-items: start;
   margin-top: 20px;
+  width: 100%;
 }
 
-/* ===== ФОТО АВТОРА ===== */
-.author-photo {
+/* Сетка стихов */
+.poems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.poem-card {
+  background: var(--light);
+  padding: 15px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  color: inherit;
+  text-decoration: none;
+  /* border-left: 3px solid var(--primary); */
   display: block;
-  width: 300px;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 3px;
-  margin: 20px auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* ===== МОБИЛЬНЫЕ СТИЛИ ===== */
-@media (max-width: 600px) {
-  body { padding: 10px; }
-  
-  h1 { font-size: 2rem; }     /* 32px */
-  h2 { font-size: 1.5rem; }   /* 24px */
-  h3 { font-size: 1.25rem; }  /* 20px */
-  
+.poem-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Заголовок в карточке */
+.poem-card .poem-title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  text-align: left;
+  margin: 0 0 8px 0;
+  color: var(--primary);
+  font-size: 18px;
+  line-height: 1.3;
+} 
+
+.poem-title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  text-align: left;
+  line-height: 1.3;
+  color: var(--primary);
+}
+
+.poem-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0;
+  text-align: left;
+}
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.pagination a, 
+.pagination span {
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.pagination a {
+  background: var(--light);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.pagination a:hover {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.pagination .current-page {
+  background: var(--primary);
+  color: var(--light);
+  border: 1px solid var(--primary);
+}
+
+.page-btn {
+  padding: 8px 12px;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.page-btn:hover {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.page-btn.active {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.page-info {
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
   .poem-columns {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
+  h1 {
+    font-size: 36px;
+  }
+
   .poems-grid {
     grid-template-columns: 1fr;
   }
-  
+
   nav ul {
     flex-direction: column;
     gap: 10px;
   }
-  
+
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 { font-size: 2rem; }     /* 32px */
+  h2 { font-size: 1.5rem; }   /* 24px */
+  h3 { font-size: 1.25rem; }  /* 20px */
+
   .author-photo {
-    width: 85%;
+    width: 81%;
     height: auto;
     max-width: 300px;
+  }
+
+  .content-block,
+  .poem {
+    padding: 20px;
+  }
+
+  .poems-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 }
