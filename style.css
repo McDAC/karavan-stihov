@@ -116,7 +116,7 @@ h1, h2, h3 {
   color: var(--primary);
 }
 
-main h1 {
+h1 {
   font-size: 42px;
 }
 
