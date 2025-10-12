@@ -349,9 +349,9 @@ figcaption {
     padding: 10px;
   }
 
-  h1 {
-    font-size: 32px;
-  }
+  h1 { font-size: 2rem; }     /* 32px */
+  h2 { font-size: 1.5rem; }   /* 24px */
+  h3 { font-size: 1.25rem; }  /* 20px */
 
   .author-photo {
     width: 81%;
