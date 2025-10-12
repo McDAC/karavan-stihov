@@ -6,7 +6,36 @@
   <title>Главная | Караван стихов</title>
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
   <link rel="stylesheet" href="style.css">
-  
+  <style>
+/* МОБИЛЬНЫЙ КРИТИЧЕСКИЙ CSS */
+@media (max-width: 600px) {
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5; 
+    color: #333; 
+    background: #f9f5e9;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .author-photo {
+    width: 85%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 300/402;
+    background: #e8e1d1; /* Плейсхолдер цвета фона */
+    border-radius: 3px;
+    margin: 15px auto;
+  }
+  h1 { font-size: 1.8rem; margin: 1rem 0; }
+  .content-block {
+    background: white;
+    padding: 20px;
+    border-radius: 3px;
+    margin: 20px 0;
+  }
+}
+</style>
   <link rel="preload" fetchpriority="high" as="image" href="img/auth.webp">
 </head>
 <body>
