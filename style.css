@@ -116,6 +116,10 @@ h1, h2, h3 {
   color: var(--primary);
 }
 
+h1 {
+  font-size: 23px;
+}
+
 h4 {
   font-family: var(--font-heading);
   font-weight: 500; /* Единое начертание для стабильности */
