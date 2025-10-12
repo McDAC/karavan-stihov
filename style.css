@@ -236,6 +236,7 @@ figcaption {
 .poem-card .poem-title {
   font-family: var(--font-heading);
   font-weight: 500;
+  text-align: left;
   margin: 0 0 8px 0;
   color: var(--primary);
   font-size: 18px;
