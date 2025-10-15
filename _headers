@@ -1,0 +1,14 @@
+/*.html
+  Cache-Control: max-age=86400
+
+/*.css
+  Cache-Control: max-age=31536000
+
+/*.js  
+  Cache-Control: max-age=31536000
+
+/fonts/*
+  Cache-Control: max-age=31536000
+
+/img/*
+  Cache-Control: max-age=31536000
