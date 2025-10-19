@@ -95,9 +95,9 @@ nav a {
   transition: all 0.3s;
 }
 
-nav a:hover {
+/* nav a:hover {
   opacity: 0.8;
-}
+} */
 
 /* Контент */
 main {
