@@ -235,6 +235,7 @@ figcaption {
   /* border-left: 3px solid var(--primary); */
   display: block;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateZ(0);
 }
 
 .poem-card:hover {
