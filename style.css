@@ -226,6 +226,7 @@ figcaption {
 }
 
 .poem-card {
+  position: relative;
   background: var(--light);
   padding: 15px;
   border-radius: 5px;
