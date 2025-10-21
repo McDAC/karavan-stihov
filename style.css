@@ -253,7 +253,7 @@ figcaption {
   line-height: 1.3;
 } 
 
-.poem-title {
+/* .poem-title {
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 18px;
@@ -262,7 +262,7 @@ figcaption {
   text-align: left;
   line-height: 1.3;
   color: var(--primary);
-}
+} */
 
 .poem-meta {
   font-size: 0.9rem;
