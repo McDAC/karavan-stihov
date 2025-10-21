@@ -237,11 +237,27 @@ figcaption {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.poem-card:hover {
+.poem-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  opacity: 0.7;
+}
+.poem-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* .poem-card:hover {
   box-shadow: 
     0 6px 20px rgba(0,0,0,0.12),
-    0 2px 4px rgba(0,0,0,0.08); /* Многослойная тень */
-}
+    0 2px 4px rgba(0,0,0,0.08);
+} */
 
 /* Заголовок в карточке */
 .poem-card .poem-title {
